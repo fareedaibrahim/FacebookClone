@@ -1,0 +1,100 @@
+.container {
+  background-color: #f0f2f5;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+.leftSection {
+  width: 55vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.rightSection {
+  width: 45vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.logo {
+  width: 300px;
+}
+.welcomeText {
+  font-size: 25px;
+  width: 20em;
+  margin-left: 30px;
+  font-weight: 500;
+  line-height: 32px;
+  margin-bottom: 120px;
+}
+.form {
+  width: 29vw;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: -1px 8px 26px -17px #000000;
+  box-shadow: -1px 8px 26px -17px #000000;
+}
+.primaryButton,
+.secondaryButton,
+.field {
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.field {
+  border-width: 0.8px;
+  border-color: #eef4fd;
+  font-size: 15px;
+}
+.field:focus {
+  border-color: #1877f2;
+}
+.field:hover {
+  border-color: #1877f2;
+}
+.primaryButton {
+  border: 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #1877f2;
+  cursor: pointer;
+}
+.forgotPasswordLink {
+  color: #1877f2;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+}
+.hr {
+  opacity: 0.4;
+  margin: 15px 0;
+}
+.secondaryButton {
+  align-self: center;
+  background-color: #32b918;
+  width: 190px;
+  border: 0;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14.8px;
+  padding: 14px 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.createPageLink {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 20px;
+}
+.createPageLink a {
+  text-decoration: none;
+  color: #000;
+}
