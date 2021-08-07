@@ -1,7 +1,7 @@
-import WelcomePage from "./pages/WelcomePage";
+// import WelcomePage from "./pages/WelcomePage";
 
-function App() {
-  return <WelcomePage />;
-}
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+
+const App = () => <ForgotPasswordPage />;
 
 export default App;
