@@ -1,0 +1,189 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f0f2f5;
+  display: flex;
+}
+
+.leftSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 55vw;
+  height: 100vh;
+}
+
+.rightSection {
+  width: 45vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.logo {
+  width: 300px;
+}
+.welcomeText {
+  font-size: 25px;
+  width: 20em;
+  margin-left: 30px;
+  font-weight: 500;
+  letter-spacing: 0px;
+  line-height: 32px;
+  margin-bottom: 120px;
+}
+.form {
+  flex-direction: column;
+  display: flex;
+  background-color: white;
+
+  width: 29vw;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 10px 13px 24px -5px rgba(192, 157, 157, 0.75);
+  -webkit-box-shadow: 10px 13px 24px -5px rgba(192, 157, 157, 0.75);
+  -moz-box-shadow: 10px 13px 24px -5px rgba(192, 157, 157, 0.75);
+}
+.primaryButton, 
+.secondaryButton,
+.field{
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    margin-bottom: 10px;
+}
+.field{
+    border-width: 0.3px;
+    border-color: #eef4fd;
+    font-size: 15px;
+}
+.field:focus{
+    border-color: #1877f2;
+}
+.field:hover{
+    border-color: #1877f2;
+}
+.primaryButton{
+    cursor: pointer;
+    border: 0;
+    background-color: #1877f2;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+.forgotPasswordLink{
+  color: #1877f2;
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none;
+}
+.hr{
+  opacity: 0.4;
+  margin: 15px 0px;
+}
+.secondaryButton{
+  background-color: #31911e;
+  width: 200px;
+  border: 0;
+  color: white;
+  padding-top: 10px;
+  padding: 14px 15px;
+  font-size: 15px;
+  opacity: 0.9;
+  align-self: center;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.createPageLink{
+  margin-top: 20px;
+  font-size: 13px;
+  text-align: center;
+}
+.createPageLink a{
+  text-decoration: none;
+  color: black;
+}
+.modalContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.modalField, .credsField {
+  padding: 10px;
+  height: 37px;
+  border-radius: 5px;
+  border-width: 0.1px;
+  border-color: rgba(170, 170, 170, 0.3);
+  background-color: #F5F6F7;
+}
+.modalField {
+  width: 196px;
+}
+.credsField, .person, .bioData {
+  width: 405px;
+}
+.credsField {
+  margin-bottom: 10px;
+}
+.person {
+  display: flex;
+  margin: 10px 0;
+  justify-content: space-between;
+}
+.bioData label {
+  opacity: 0.6;
+  font-size: 12px;
+}
+.bioData {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.questionMark {
+  cursor: pointer;
+  width: 12px;
+}
+.dob {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.selectField, .genderButton {
+  width: 130px;
+  padding: 10px;
+  height: 37px;
+  border-radius: 5px;
+  font-size: 10px;
+  background-color: #fff;
+  border-width: 0.1px;
+  border-color: rgba(170, 170, 170, 0.7);
+}
+.genderButton {
+  display: flex;
+  justify-content: space-between;
+}
+.terms {
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.terms a {
+  text-decoration: none;
+  font-weight: 400;
+  color: #1877f2;
+}
+.signUpButton {
+  align-self: center;
+  width: 180px;
+  padding: 3px 15px;
+  border-radius: 5px;
+  border-width: 0;
+  background-color: rgb(36, 173, 36);
+  color: #fff;
+  font-size: 18px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+.signUpButton:hover {
+  background-color: #67995B;
+}

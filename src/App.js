@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import { routes } from "./pages/routes";
+import WelcomePage from "./pages/WelcomePage";
+
+const App = () => (
+  <BrowserRouter>
+    <Switch>
+      <Route path={routes.welcomepage} exact component={WelcomePage} />
+      <Route
+        path={routes.forgotPasswordPage}
+        exact
+        component={ForgotPasswordPage}
+      />
+    </Switch>
+  </BrowserRouter>
+);
 
 export default App;
