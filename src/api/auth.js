@@ -1,9 +1,24 @@
 import client from "./client"
 
+export const post_options = {
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+}
 
 const login = async (data) => {
-    await fetch(`${client.BASE_URL}/token/`, { method: "POST" }).then((data) => {
-        console.log(data);
+    return client.post('/token/', data, post_options)
+    .then((response) => response)
+    .catch((error) => {
+        return { status: false }
+    })
+    .then((response) => { 
+       return response
     })
 }
 

@@ -1,5 +1,9 @@
-const client = {
-    BASE_URL: "http://127.0.0.1:8000/api/v1"
-}
+import axios from "axios";
+
+const client = axios.create({
+    baseURL: "http://127.0.0.1:8000/api/v1",
+    timeout: 1000,
+
+});
 
 export default client;

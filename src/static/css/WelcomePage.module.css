@@ -47,6 +47,7 @@
 }
 .primaryButton, 
 .secondaryButton,
+.disabled,
 .field{
     padding: 10px 15px;
     border-radius: 5px;
@@ -71,6 +72,14 @@
     color: white;
     font-weight: bold;
     font-size: 18px;
+}
+.disabled {
+  cursor: pointer;
+  border: 0;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: #c9c9c9;
 }
 .forgotPasswordLink{
   color: #1877f2;
@@ -186,4 +195,9 @@
 }
 .signUpButton:hover {
   background-color: #67995B;
+}
+.error {
+  color: red;
+  font-size: 14px;
+  padding: 10px 0px;
 }

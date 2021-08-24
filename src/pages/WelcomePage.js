@@ -1,26 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
-import Modal from "../components/Modal";
-import style from "../static/css/WelcomePage.module.css";
-import logo from "../static/img/logo.svg";
-import questionMark from "../static/img/q.svg";
-import { routes } from "./routes";
-import {getSequence, getMonths} from "../utils/date";
 import authApi from "../api/auth"
+import { routes } from "./routes";
+import store from "../store/store"
+import Modal from "../components/Modal";
+import logo from "../static/img/logo.svg";
+import AppContext from "../store/AppContext";
+import questionMark from "../static/img/q.svg";
+import {getSequence, getMonths} from "../utils/date";
+import style from "../static/css/WelcomePage.module.css";
+
 
 const WelcomePage = ({ history }) => {
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   const [data, setData] = useState({ phone: "", password: "" });
 
+  const context = useContext(AppContext);
+
   const handleData = ({ target: { value } }, field) => {
-    setData({ ...data, [field]: value })
+    setData({ ...data, [field]: value });
   }
 
   const handleLogin = async (e) => {
-    e.preventDefault()
+    setError("")
+    e.preventDefault();
+    setLoading(true);
     const result = await authApi.login(data);
-    console.log(result)
+    if(!result.status) {
+      setLoading(false);
+      return setError("Incorrect Username or Password");}
+    context.setToken(result.data);
+    store.setItem("token", result.data);
+    setLoading(false);
   }
+
+  const disabledProp = loading ? { disabled : 'true' } : {}
 
   return (
     <section className={style.container}>
@@ -42,6 +58,7 @@ const WelcomePage = ({ history }) => {
               className={style.field}
               onChange={(e) => handleData(e, "phone")}
             />
+            <p className={style.error}>{error}</p>
             <input
               type="password"
               name="password"
@@ -49,11 +66,12 @@ const WelcomePage = ({ history }) => {
               className={style.field}
               onChange={(e) => handleData(e, "password")}
             />
-            <button 
+            <button
+              {...disabledProp}
               type="submit" 
               name="Submit" 
               onClick={handleLogin}
-              className={style.primaryButton}>
+              className={loading ? style.disabled : style.primaryButton}>
               Login
             </button>
             <a
@@ -76,6 +94,7 @@ const WelcomePage = ({ history }) => {
           </div>
         </div>
       </div>
+      
       {/* Modal Starts here */}
       <Modal
         title="Sign Up"
