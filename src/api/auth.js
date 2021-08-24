@@ -2,10 +2,11 @@ import client from "./client"
 
 
 const login = async (data) => {
-    console.log(data);
-    fetch(`${client.BASE_URL}/token/`)
+    await fetch(`${client.BASE_URL}/token/`, { method: "POST" }).then((data) => {
+        console.log(data);
+    })
 }
 
-const allExports = {login}
+const allExports = { login };
 
 export default allExports;
