@@ -1,18 +1,7 @@
-import client from "./client"
-
-export const post_options = {
-    mode: 'cors',
-    cache: 'no-cache',
-    credentials: 'same-origin',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    redirect: 'follow',
-    referrerPolicy: 'no-referrer',
-}
+import client, { options } from "./client"
 
 const login = async (data) => {
-    return client.post('/token/', data, post_options)
+    return client.post('/token/', data, options)
     .then((response) => response)
     .catch((error) => {
         return { status: false }
@@ -22,6 +11,24 @@ const login = async (data) => {
     })
 }
 
-const allExports = { login };
+const signUp = async (data) => {
+    const newoptions = {...options, headers: {'Content-Type': "form/data"}}
+    
+    return client.post("/register/", data, options)
+    .then((response) => response)
+    .catch((error) => {
+        console.log("error")
+        console.log(error)
+        console.log("error")
+    })
+    .then((response) =>{
+         console.log("response")
+         console.log(response)
+         console.log("response")
+        }
+    );
+}
+
+const allExports = { login, signUp };
 
 export default allExports;
